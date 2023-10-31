@@ -15,7 +15,7 @@ def SignupPage(request):
         pass2=request.POST.get('password2')
 
         if pass1!=pass2:
-            return HttpResponse("Your password and confrom password are not Same!!")
+            return HttpResponse("Your password and confirm password are not Same!!")
         else:
 
             my_user=User.objects.create_user(uname,email,pass1)
@@ -36,7 +36,7 @@ def LoginPage(request):
             login(request,user)
             return redirect('home')
         else:
-            return HttpResponse ("Username or Password is incorrect!!!")
+            return HttpResponse ("Username or Password is incorrect!")
 
     return render (request,'login.html')
 
